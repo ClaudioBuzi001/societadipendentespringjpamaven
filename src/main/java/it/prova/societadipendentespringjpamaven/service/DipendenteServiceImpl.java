@@ -15,7 +15,7 @@ public class DipendenteServiceImpl implements DipendenteService {
 	private DipendenteRepository dipendenteRepository;
 
 	@Transactional(readOnly = true)
-	public List<Dipendente> listAllAbitanti() {
+	public List<Dipendente> listAll() {
 		return (List<Dipendente>) dipendenteRepository.findAll();
 
 	}

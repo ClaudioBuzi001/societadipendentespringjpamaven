@@ -5,7 +5,7 @@ import java.util.List;
 import it.prova.societadipendentespringjpamaven.model.Dipendente;
 
 public interface DipendenteService {
-	public List<Dipendente> listAllAbitanti();
+	public List<Dipendente> listAll();
 
 	public Dipendente caricaSingoloDipendente(Long id);
 
