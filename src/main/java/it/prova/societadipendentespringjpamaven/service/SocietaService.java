@@ -23,7 +23,7 @@ public interface SocietaService {
 	
 	public void aggiungiDipendente(Dipendente dipendenteInstance, Societa societaInstance);
 //
-//	public List<Societa> trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(Integer reddito);
+	public List<Societa> trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(Integer reddito);
 //	
 //	public List<Societa> trovaTuttePerRagioneSocialeIniziaCon(String token);
 	

@@ -112,6 +112,22 @@ public class BatteriaDiTestService {
 		
 	}
 	
+	public void testTrovaSocietaConDipendenteRedditoSuperioreA30000() {
+		System.out.println("_-------testTrovaSocietaConDipendenteRedditoSuperioreA30000------_");
+		
+		Societa societa = new Societa("Giorgio e Giovanni", "via dei sette nani", null);
+		societaService.inserisciNuovo(societa);
+		
+		Dipendente dipendente = new Dipendente("Giorgio", "Marione", new Date(), 50000, societa);
+		dipendenteService.inserisciNuovo(dipendente);
+		
+		if(societaService.trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(30000).size() < 1)
+			throw new RuntimeException("_----testTrovaSocietaConDipendenteRedditoSuperioreA30000 FAILED");
+		
+		System.out.println("--------------testTrovaSocietaConDipendenteRedditoSuperioreA30000 Passed");
+		
+	}
+	
 }
 
 

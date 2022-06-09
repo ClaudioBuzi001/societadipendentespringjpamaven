@@ -63,10 +63,10 @@ public class SocietaServiceImpl implements SocietaService {
 		societaInstance.getDipendenti().add(dipendenteInstance);
 	}
 
-//	@Override
-//	public List<Societa> trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(Integer reddito) {
-//		return societaRepository.findAllDistinctByDipendenti_RedditoAnnuoLordoGreaterThan(reddito);
-//	}
+	@Override
+	public List<Societa> trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(Integer reddito) {
+		return societaRepository.findAllDistinctByDipendenti_RedditoAnnuoLordoGreaterThan(reddito);
+	}
 //
 //	@Override
 //	public List<Societa> trovaTuttePerRagioneSocialeIniziaCon(String token) {
