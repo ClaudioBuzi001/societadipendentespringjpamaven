@@ -25,9 +25,9 @@ public class Dipendente {
 	private String nome;
 	@Column(name = "cognome")
 	private String cognome;
-	@Column(name = "dataassunzione")
+	@Column(name = "dataAssunzione")
 	private Date dataAssunzione;
-	@Column(name = "redditoannuolordo")
+	@Column(name = "redditoAnnuoLordo")
 	private Integer redditoAnnuoLordo;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "societa_id", nullable = false)

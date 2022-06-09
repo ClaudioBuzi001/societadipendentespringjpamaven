@@ -15,13 +15,13 @@ public interface DipendenteService {
 
 	public void rimuovi(Dipendente dipendenteInstance);
 
-	public List<Dipendente> trovaTuttiPerNome(String nome);
-
-	public List<Dipendente> trovaTuttiPerNomeECognome(String nome, String cognome);
-
-	public List<Dipendente> trovaTuttiPerRedditoAnnuoMaggioreDi(Integer input);
-
-	public List<Dipendente> trovaTuttiPerNomeEager(String nome);
+//	public List<Dipendente> trovaTuttiPerNome(String nome);
+//
+//	public List<Dipendente> trovaTuttiPerNomeECognome(String nome, String cognome);
+//
+//	public List<Dipendente> trovaTuttiPerRedditoAnnuoMaggioreDi(Integer input);
+//
+//	public List<Dipendente> trovaTuttiPerCognomeEager(String nome);
 	
 	public List<Dipendente> findByExample(Dipendente example);
 

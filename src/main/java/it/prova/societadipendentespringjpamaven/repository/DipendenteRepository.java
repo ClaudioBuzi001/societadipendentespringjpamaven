@@ -10,13 +10,13 @@ import it.prova.societadipendentespringjpamaven.model.Dipendente;
 
 public interface DipendenteRepository extends CrudRepository<Dipendente, Long>, QueryByExampleExecutor<Dipendente> {
 
-	List<Dipendente> findAllByNome(String nome);
-
-	List<Dipendente> findAllByNomeECognome(String nome, String cognome);
-
-	List<Dipendente> findAllByRedditoAnnuoLordoGreaterThan(Integer input);
-
-	@EntityGraph(attributePaths = { "societa" })
-	List<Dipendente> findAllByNomeEager(String nome);
+//	List<Dipendente> findAllByNome(String nome);
+//
+//	List<Dipendente> findAllByNomeAndCognome(String nome, String cognome);
+//
+//	List<Dipendente> findAllByRedditoAnnuoLordoGreaterThan(Integer input);
+//
+//	@EntityGraph(attributePaths = { "societa" })
+//	List<Dipendente> findAllByCognome(String cognome);
 
 }

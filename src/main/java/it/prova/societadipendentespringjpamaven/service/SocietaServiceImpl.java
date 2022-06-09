@@ -27,17 +27,17 @@ public class SocietaServiceImpl implements SocietaService {
 		return societaRepository.findById(id).orElse(null);
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional
 	public void aggiorna(Societa societaInstance) {
 		societaRepository.save(societaInstance);
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional
 	public void inserisciNuovo(Societa societaInstance) {
 		societaRepository.save(societaInstance);
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional
 	public void rimuovi(Societa dipendenteInstance) {
 		societaRepository.delete(dipendenteInstance);
 	}
@@ -49,14 +49,14 @@ public class SocietaServiceImpl implements SocietaService {
 		return (List<Societa>) societaRepository.findAll(Example.of(example, matcher));
 	}
 
-	@Override
-	public List<Societa> trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(Integer reddito) {
-		return societaRepository.findAllDistinctByDipendenti_RedditoAnnuoLordoGreaterThan(reddito);
-	}
-
-	@Override
-	public List<Societa> trovaTuttePerRagioneSocialeIniziaCon(String token) {
-		return societaRepository.findAllByRagioneSocialeStartsWith(token);
-	}
+//	@Override
+//	public List<Societa> trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(Integer reddito) {
+//		return societaRepository.findAllDistinctByDipendenti_RedditoAnnuoLordoGreaterThan(reddito);
+//	}
+//
+//	@Override
+//	public List<Societa> trovaTuttePerRagioneSocialeIniziaCon(String token) {
+//		return societaRepository.findAllByRagioneSocialeStartsWith(token);
+//	}
 
 }

@@ -20,10 +20,10 @@ public interface SocietaService {
 	public void rimuovi(Societa dipendenteInstance);
 	
 	public List<Societa> findAllByExample(Societa example);
-
-	public List<Societa> trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(Integer reddito);
-	
-	public List<Societa> trovaTuttePerRagioneSocialeIniziaCon(String token);
+//
+//	public List<Societa> trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(Integer reddito);
+//	
+//	public List<Societa> trovaTuttePerRagioneSocialeIniziaCon(String token);
 	
 	
 	

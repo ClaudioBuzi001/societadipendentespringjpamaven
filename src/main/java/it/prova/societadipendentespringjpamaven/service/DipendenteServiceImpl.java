@@ -18,6 +18,7 @@ public class DipendenteServiceImpl implements DipendenteService {
 	@Autowired
 	private DipendenteRepository dipendenteRepository;
 
+	
 	@Transactional(readOnly = true)
 	public List<Dipendente> listAll() {
 		return (List<Dipendente>) dipendenteRepository.findAll();
@@ -30,40 +31,40 @@ public class DipendenteServiceImpl implements DipendenteService {
 
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional
 	public void aggiorna(Dipendente dipendenteInstance) {
 		dipendenteRepository.save(dipendenteInstance);
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional
 	public void inserisciNuovo(Dipendente dipendenteInstance) {
 		dipendenteRepository.save(dipendenteInstance);
 	}
 
-	@Transactional(readOnly = true)
+	@Transactional
 	public void rimuovi(Dipendente dipendenteInstance) {
 		dipendenteRepository.delete(dipendenteInstance);
 	}
 
-	@Override
-	public List<Dipendente> trovaTuttiPerNome(String nome) {
-		return dipendenteRepository.findAllByNome(nome);
-	}
-
-	@Override
-	public List<Dipendente> trovaTuttiPerNomeECognome(String nome, String cognome) {
-		return dipendenteRepository.findAllByNomeECognome(nome, cognome);
-	}
-
-	@Override
-	public List<Dipendente> trovaTuttiPerRedditoAnnuoMaggioreDi(Integer input) {
-		return dipendenteRepository.findAllByRedditoAnnuoLordoGreaterThan(input);
-	}
-
-	@Override
-	public List<Dipendente> trovaTuttiPerNomeEager(String nome) {
-		return dipendenteRepository.findAllByNomeEager(nome);
-	}
+//	@Override
+//	public List<Dipendente> trovaTuttiPerNome(String nome) {
+//		return dipendenteRepository.findAllByNome(nome);
+//	}
+//
+//	@Override
+//	public List<Dipendente> trovaTuttiPerNomeECognome(String nome, String cognome) {
+//		return dipendenteRepository.findAllByNomeAndCognome(nome, cognome);
+//	}
+//
+//	@Override
+//	public List<Dipendente> trovaTuttiPerRedditoAnnuoMaggioreDi(Integer input) {
+//		return dipendenteRepository.findAllByRedditoAnnuoLordoGreaterThan(input);
+//	}
+//
+//	@Override
+//	public List<Dipendente> trovaTuttiPerCognomeEager(String nome) {
+//		return dipendenteRepository.findAllByCognome(nome);
+//	}
 
 	@Transactional(readOnly = true)
 	public List<Dipendente> findByExample(Dipendente example) {

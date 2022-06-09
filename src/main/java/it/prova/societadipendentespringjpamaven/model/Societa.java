@@ -1,6 +1,7 @@
 package it.prova.societadipendentespringjpamaven.model;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -20,14 +21,14 @@ public class Societa {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
-	@Column(name = "ragionesociale")
+	@Column(name = "ragioneSociale")
 	private String ragioneSociale;
 	@Column(name = "indirizzo")
 	private String indirizzo;
-	@Column(name = "datafondazione")
+	@Column(name = "dataFondazione")
 	private Date dataFondazione;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "societa")
-	private Set<Dipendente> dipendenti;
+	private Set<Dipendente> dipendenti = new HashSet<Dipendente>();
 
 	public Societa() {
 		super();
@@ -48,6 +49,13 @@ public class Societa {
 		this.indirizzo = indirizzo;
 		this.dataFondazione = dataFondazione;
 		this.dipendenti = dipendenti;
+	}
+
+	public Societa(String ragioneSociale, String indirizzo, Date dataFondazione) {
+		super();
+		this.ragioneSociale = ragioneSociale;
+		this.indirizzo = indirizzo;
+		this.dataFondazione = dataFondazione;
 	}
 
 	public Long getId() {
