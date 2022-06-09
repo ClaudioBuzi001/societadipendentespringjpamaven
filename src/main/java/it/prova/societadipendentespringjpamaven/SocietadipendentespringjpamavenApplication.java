@@ -27,6 +27,8 @@ public class SocietadipendentespringjpamavenApplication implements CommandLineRu
 		
 		batteriaDiTestService.testInserisciDipendente();
 		
+		batteriaDiTestService.testFindByExampleSocieta();
+		
 		System.out.println("################ FINE   #################");
 	}
 	

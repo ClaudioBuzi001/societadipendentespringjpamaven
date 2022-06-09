@@ -42,6 +42,7 @@ public class SocietaServiceImpl implements SocietaService {
 		societaRepository.delete(dipendenteInstance);
 	}
 
+	@Override
 	@Transactional(readOnly = true)
 	public List<Societa> findAllByExample(Societa example) {
 		ExampleMatcher matcher = ExampleMatcher.matching().withStringMatcher(StringMatcher.CONTAINING); 
