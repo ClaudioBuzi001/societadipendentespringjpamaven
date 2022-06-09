@@ -9,13 +9,18 @@ import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import it.prova.societadipendentespringjpamaven.model.Dipendente;
 import it.prova.societadipendentespringjpamaven.model.Societa;
+import it.prova.societadipendentespringjpamaven.repository.DipendenteRepository;
 import it.prova.societadipendentespringjpamaven.repository.SocietaRepository;
 
 @Service
 public class SocietaServiceImpl implements SocietaService {
 	@Autowired
 	private SocietaRepository societaRepository;
+	
+	@Autowired
+	private DipendenteRepository dipendenteRepository;
 	
 	@Transactional(readOnly = true)
 	public List<Societa> listAll() {
@@ -48,6 +53,14 @@ public class SocietaServiceImpl implements SocietaService {
 		ExampleMatcher matcher = ExampleMatcher.matching().withStringMatcher(StringMatcher.CONTAINING); 
 		
 		return (List<Societa>) societaRepository.findAll(Example.of(example, matcher));
+	}
+
+	@Override
+	public void aggiungiDipendente(Dipendente dipendenteInstance, Societa societaInstance) {
+		societaRepository.save(societaInstance);
+		dipendenteRepository.save(dipendenteInstance);
+		
+		societaInstance.getDipendenti().add(dipendenteInstance);
 	}
 
 //	@Override

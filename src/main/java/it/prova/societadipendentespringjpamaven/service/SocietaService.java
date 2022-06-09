@@ -2,7 +2,7 @@ package it.prova.societadipendentespringjpamaven.service;
 
 import java.util.List;
 
-
+import it.prova.societadipendentespringjpamaven.model.Dipendente;
 import it.prova.societadipendentespringjpamaven.model.Societa;
 
 
@@ -20,6 +20,8 @@ public interface SocietaService {
 	public void rimuovi(Societa dipendenteInstance);
 	
 	public List<Societa> findAllByExample(Societa example);
+	
+	public void aggiungiDipendente(Dipendente dipendenteInstance, Societa societaInstance);
 //
 //	public List<Societa> trovaTutteDistintePerDipendentiConRedditoAnnuoMaggioreDi(Integer reddito);
 //	

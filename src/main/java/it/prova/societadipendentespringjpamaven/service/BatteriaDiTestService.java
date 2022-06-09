@@ -61,7 +61,37 @@ public class BatteriaDiTestService {
 		System.out.println(".......TestFindByExample terminato.......");
 
 	}
+	
+	public void testRimozioneSocieta() {
+		System.out.println("_-------testRimozioneSocieta ----------");
+		
+		Societa societa = new Societa("Piero e paolo", "via dei sette nani", null);
+		
+		if(societa.getDipendenti().size()> 0)
+			throw new RuntimeException("Errore, Dipendenti presenti nella societa");
+		
+		societaService.rimuovi(societa);
+		
+		System.out.println("_testRimozioneSocieta PASSED---------_");
+		
+	}
 
+	public void testInserimentoDipendenteDataSocieta() {
+		System.out.println("_-------testInserimentoDipendenteDataSocieta ----------");
+
+		Societa societa = new Societa("Piero e Gianmaaa", "via dei sette nani", null);
+
+		Dipendente dipendente = new Dipendente("Giorgio", "Marione", new Date(), 2000, societa);
+		
+		//Inserisco tutto insiemee
+		societaService.aggiungiDipendente(dipendente, societa);
+		
+		if(societa.getDipendenti().size() < 1) 
+			throw new RuntimeException("TESTINSERIMENTODIPENDETE FAILED");
+		
+		System.out.println("--------------testInserimentoDipendenteDataSocieta PASSED--------------");
+	}
+	
 }
 
 
