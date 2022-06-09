@@ -92,6 +92,26 @@ public class BatteriaDiTestService {
 		System.out.println("--------------testInserimentoDipendenteDataSocieta PASSED--------------");
 	}
 	
+	public void testModificaDipendente() {
+		System.out.println("_------testModificaDipendente----------------");
+		
+		Societa societa = new Societa("Piero e Gianmaaa", "via dei sette nani", null);
+		societaService.inserisciNuovo(societa);
+		
+		Dipendente dipendente = new Dipendente("Giorgio", "Marione", new Date(), 2000, societa);
+		dipendenteService.inserisciNuovo(dipendente);
+		
+		dipendente.setNome("Signor Giurgio");
+		dipendenteService.aggiorna(dipendente);
+		
+		if(dipendente.getNome().equals("Giorgio")) {
+			throw new RuntimeException("_---testModificaDipendente FAILED");
+		}
+		
+		System.out.println("_----testModificaDipendente Passed");
+		
+	}
+	
 }
 
 

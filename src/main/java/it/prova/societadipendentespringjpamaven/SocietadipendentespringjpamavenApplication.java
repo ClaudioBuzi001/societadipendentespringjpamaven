@@ -33,6 +33,8 @@ public class SocietadipendentespringjpamavenApplication implements CommandLineRu
 		
 		batteriaDiTestService.testInserimentoDipendenteDataSocieta();
 		
+		batteriaDiTestService.testModificaDipendente();
+		
 		System.out.println("################ FINE   #################");
 	}
 	
