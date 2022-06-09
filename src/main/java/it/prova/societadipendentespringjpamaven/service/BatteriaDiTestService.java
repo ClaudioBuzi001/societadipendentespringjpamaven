@@ -1,5 +1,7 @@
 package it.prova.societadipendentespringjpamaven.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -128,6 +130,21 @@ public class BatteriaDiTestService {
 		
 	}
 	
+	public void testTrovaDipendenteConDataAssunzioneMaggioreEDataSocietaMinoreDi1990() throws ParseException {
+		System.out.println("_-------testTrovaDipendenteConDataAssunzioneMaggioreEDataSocietaMinoreDi1990------_");
+		
+		Societa societa = new Societa("Giorgio e Giovanni", "via dei sette nani", new SimpleDateFormat("dd/MM/yyyy").parse("01/01/1974"));
+		societaService.inserisciNuovo(societa);
+		
+		Dipendente dipendente = new Dipendente("Giorgio", "Marione", new SimpleDateFormat("dd/MM/yyyy").parse("01/01/1980"), 50000, societa);
+		dipendenteService.inserisciNuovo(dipendente);
+		
+		if(dipendenteService.findByDataAssunzineMaggioreEDataFondazioneSocietaMaggioreDi(new SimpleDateFormat("dd/MM/yyyy").parse("01/01/1990")) == null)
+			throw new RuntimeException("_----testTrovaDipendenteConDataAssunzioneMaggioreEDataSocietaMinoreDi1990 FAILED");
+		
+		System.out.println("--------------testTrovaDipendenteConDataAssunzioneMaggioreEDataSocietaMinoreDi1990 Passed");
+		
+	}
 }
 
 

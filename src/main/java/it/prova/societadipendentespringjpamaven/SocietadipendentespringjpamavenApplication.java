@@ -37,6 +37,8 @@ public class SocietadipendentespringjpamavenApplication implements CommandLineRu
 		
 		batteriaDiTestService.testTrovaSocietaConDipendenteRedditoSuperioreA30000();
 		
+		batteriaDiTestService.testTrovaDipendenteConDataAssunzioneMaggioreEDataSocietaMinoreDi1990();
+		
 		System.out.println("################ FINE   #################");
 	}
 	

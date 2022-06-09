@@ -1,5 +1,6 @@
 package it.prova.societadipendentespringjpamaven.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,6 +75,11 @@ public class DipendenteServiceImpl implements DipendenteService {
 		// .withIgnoreCase();
 		return (List<Dipendente>) dipendenteRepository.findAll(Example.of(example, matcher));
 
+	}
+
+	@Override
+	public Dipendente findByDataAssunzineMaggioreEDataFondazioneSocietaMaggioreDi(Date data) {
+		return dipendenteRepository.findFirstBySocieta_DataFondazioneBeforeOrderByDataAssunzione(data);
 	}
 
 }

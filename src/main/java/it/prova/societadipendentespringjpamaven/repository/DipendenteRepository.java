@@ -1,8 +1,10 @@
 package it.prova.societadipendentespringjpamaven.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.EntityGraph;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.QueryByExampleExecutor;
 
@@ -18,5 +20,7 @@ public interface DipendenteRepository extends CrudRepository<Dipendente, Long>, 
 //
 //	@EntityGraph(attributePaths = { "societa" })
 //	List<Dipendente> findAllByCognome(String cognome);
+	
+	Dipendente  findFirstBySocieta_DataFondazioneBeforeOrderByDataAssunzione(Date date);
 
 }
